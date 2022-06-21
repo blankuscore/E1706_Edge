@@ -1,2 +1,11 @@
 # E1706_Edge
-Code for the edge device on DTX Project E1706 
+**Version 0.0.0**
+
+Code to pull RS485 incomming serial data from the DTX device onto a Raspberry Pi.
+Initial commits to be built for Raspberry Pi 3.0 and eventually ported to a Raspberry Pi Zero W.
+
+## Contributors
+- Greg Martinjak <greg.martinjak@nvent.com>
+
+## License & Copyright
+None (yet)
