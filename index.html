@@ -3,44 +3,31 @@
     <head>
         <meta charset = "UTF-8">
         <title>DTX Status</title>
+        <script src=
+            "https://code.jquery.com/jquery-3.5.1.js">
+        </script>
+
     </head>
     <body>
-        <form id="myForm">
-            <input type = "file" id = "csvFile" accept=".csv" />
-            <br />
-            <input type = "submit" value = "Submit" />
-        </form>
+        <div id = "myData"></div>
         <script>
-            const myForm = document.getElementById("myForm");
-            const csvFile = document.getElementById("csvFile");
-        
-            myForm.addEventListener("submit", function (e) {
-              e.preventDefault();
-              const input = csvFile.files[0];
-              const reader = new FileReader();
-        
-              reader.onload = function (e) {
-                const text = e.target.result;
-                document.write(text);
-              };
-        
-              reader.readAsText(input);
-            });
-          </script>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js" integrity="sha512-SGWgwwRA8xZgEoKiex3UubkSkV1zSE1BS6O4pXcaxcNtUlQsOmOmhVnDwIvqGRfEmuz83tIGL13cXMZn6upPyg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script>
-            function arrayToTable(tableData) {
-                var table = $('<table></table>');
-                $(tableData).each(function (i, rowData) {
-                    var row = $('<tr></tr>');
-                    $(rowData).each(function (j, cellData) {
-                        row.append($('<td>'+cellData+'</td>'));
-                    });
-                    table.append(row);
-                });
-                return table;
+            fetch('data.json')
+            .then(function(response){
+                return response.json();
+            })
+            .then(function (data){
+                appendData(data);
+            })
+            .catch(function(err){
+                console.log('error:' + err);
+            })
+            function appendData(data) {
+                var mainContainer = document.getElementById("myData");
+                for (var i = 0; i < data.length; i++) {
+                    var div = document.createElement("div");
+                    div.innerHTML = data[i];
+                    mainContainer.appendChild(div);
+                }
             }
         </script>
     </body>

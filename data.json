@@ -1,0 +1,14 @@
+[
+    {
+        "surge"             :   "9999",
+        "tov"               :   "9999",
+        "module_status_1"   :  true,
+        "module_status_2"   :  true,
+        "module_status_3"   :  true,
+        "module_status_4"   :  true,
+        "module_status_5"   :  true,
+        "module_status_6"   :  true,
+        "module_status_7"   :  true,
+        "carrier"           : "1"
+    }
+]
