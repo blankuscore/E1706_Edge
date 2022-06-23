@@ -1,4 +1,4 @@
-OCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@ OCTYPE html>
 <body>
     <div id="myData"></div>
     <script>
-        fetch('people.json')
+        fetch('https://raw.githubusercontent.com/blankuscore/E1706_Edge/main/JSON_Test/people.json')
             .then(function (response) {
                 return response.json();
             })

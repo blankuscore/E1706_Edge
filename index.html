@@ -6,12 +6,19 @@
         <script src=
             "https://code.jquery.com/jquery-3.5.1.js">
         </script>
-
+        <style>
+            .myDiv{
+                border: 5px outset black;
+                background-color: gray;
+                text-align: center;
+                color: white;
+            }
+        </style>
     </head>
     <body>
-        <div id = "myData"></div>
+        <div class = "myDiv", id = "myData"></div>
         <script>
-            fetch('data.json')
+            fetch('https://raw.githubusercontent.com/blankuscore/E1706_Edge/main/data.json')
             .then(function(response){
                 return response.json();
             })
@@ -25,8 +32,46 @@
                 var mainContainer = document.getElementById("myData");
                 for (var i = 0; i < data.length; i++) {
                     var div = document.createElement("div");
-                    div.innerHTML = data[i];
+                    div.innerHTML = "Surge Count: " + data[i].surge;
                     mainContainer.appendChild(div);
+                    var div = document.createElement("div");
+                    div.innerHTML = "TOV Count: " + data[i].tov;
+                    mainContainer.appendChild(div)
+                    if(data[i].module_status_1 == 1){
+                        var div = document.createElement("div");
+                        div.innerHTML = "Module Status 1: OK";
+                        mainContainer.appendChild(div)
+                    }
+                    if(data[i].module_status_2 == 1){
+                        var div = document.createElement("div");
+                        div.innerHTML = "Module Status 2: OK";
+                        mainContainer.appendChild(div)
+                    }
+                    if(data[i].module_status_3 == 1){
+                        var div = document.createElement("div");
+                        div.innerHTML = "Module Status 3: OK";
+                        mainContainer.appendChild(div)
+                    }
+                    if(data[i].module_status_4 == 1){
+                        var div = document.createElement("div");
+                        div.innerHTML = "Module Status 4: OK";
+                        mainContainer.appendChild(div)
+                    }
+                    if(data[i].module_status_5 == 1){
+                        var div = document.createElement("div");
+                        div.innerHTML = "Module Status 5: OK";
+                        mainContainer.appendChild(div)
+                    }
+                    if(data[i].module_status_6 == 1){
+                        var div = document.createElement("div");
+                        div.innerHTML = "Module Status 6: OK";
+                        mainContainer.appendChild(div)
+                    }
+                    if(data[i].module_status_7 == 1){
+                        var div = document.createElement("div");
+                        div.innerHTML = "Module Status 7: OK";
+                        mainContainer.appendChild(div)
+                    }
                 }
             }
         </script>
