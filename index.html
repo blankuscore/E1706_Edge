@@ -7,69 +7,56 @@
         <script src=
             "https://code.jquery.com/jquery-3.5.1.js">
         </script>
-        <style>
-            .myDiv{
-                background-color: gray;
-                text-align: center;
-                font-size: 1.5em;
-                color: white;
-            }
-        </style>
-        <style>
-            .mega-menu_container{
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: normal;
-            padding: 0 2.25em;
-            padding-left: calc(2.25em + -50vw + 720px);
-            padding-right: calc(2.25em + -50vw + 720px);
-            flex-wrap: nowrap;
-            }
-        </style>
-
-        <div id="block-sitelogo" data-block-plugin-id="block_content:e3f15a1c-e408-49eb-acab-947dcb5c539c" class="nvent-block">
-            <div class="block">
-                
-                    
-                
-            
-            <figure class="mega-menu__logo mega-menu__logo--nvent">
-                <a class="logo__link" href="/en-us/home" aria-label="Homepage Link">
-                        <span class="sr-only"></span>
-                            
-            
-            <picture class="logo__image">
-                
-            <img class="logo__img" src="https://www.nvent.com/themes/custom/particle/dist/app-drupal/assets/images/logo-nvent.svg" alt="Homepage" loading="lazy">
-            
-            </picture>
-                
-                </a>
-            
-            </figure>
-            </div>
-            </div>
     </head>
+    <body class = "body">
+        <div class = "w-row">
+            <div class = "w-col w-col-2"><img src="https://uploads-ssl.webflow.com/62b5c7ad8165e99e02f49528/62b5c821e2e04e3f6384c5f8_logo-nvent.svg" loading="lazy" width="123" alt=""></div>
+            <div class = "w-col w-col-3"><h2 class = "heading">DTX&nbsp;Status</h2></div>        
+            <div class = "w-col w-col-5"><h2 class = "heading">DTX120F208Y</h2></div>
+        </div>
+        <div class="div-block"></div>
+    </body>
     <body>
-        <div class = "skill">
-            <div class="outer">
-                <div class="inner">
-                    <div id="number">  </div>
+        <div class = "w-row">
+            <div class = "w-col"><h3>Surge Count:</h3></div>
+            <div class = "w-col">
+                <div class = "skill">
+                    <div class="outer">
+                        <div class="inner">
+                            <div id="number">  </div>
+                        </div>
+                    </div>
+                    <svg xmlns = "https://www.w3.org/2000/svg" version = "1.1" width = "160px" height = "160px">
+                        <defs>
+                            <linearGradient id = "GradientColor">
+                                <stop offset="0%" stop-color="#e91e63"/>
+                                <stop offset="100%" stop-color="#673ab7"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx = "80" cy = "80" r = "70" stroke-linecap = "round"/>
+                    </svg>
                 </div>
             </div>
-        <svg xmlns = "https://www.w3.org/2000/svg" version = "1.1" width = "160px" height = "160px">
-            <defs>
-                <linearGradient id = "GradientColor">
-                    <stop offset="0%" stop-color="#e91e63"/>
-                    <stop offset="100%" stop-color="#673ab7"/>
-                </linearGradient>
-            </defs>
-            <circle cx = "80" cy = "80" r = "70" stroke-linecap = "round"/>
-        </svg>
+            <div class = "w-col"><h3>TOV Count:</h3></div>
+            <div class = "w-col">
+                <div class = "skill">
+                    <div class="outer">
+                        <div class="inner">
+                            <div id="number2">  </div>
+                        </div>
+                    </div>
+                    <svg xmlns = "https://www.w3.org/2000/svg" version = "1.1" width = "160px" height = "160px">
+                        <defs>
+                            <linearGradient id = "GradientColor">
+                                <stop offset="0%" stop-color="#e91e63"/>
+                                <stop offset="100%" stop-color="#673ab7"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx = "80" cy = "80" r = "70" stroke-linecap = "round"/>
+                    </svg>
+                </div>
+            </div>
         </div>
-
         <div class = "myDiv", id = "myData"></div>
         <script>
             fetch('https://raw.githubusercontent.com/blankuscore/E1706_Edge/main/data.json')
@@ -77,8 +64,9 @@
                 return response.json();
             })
             .then(function (data){
-                appendData(data);
+                // appendData(data);
                 createprogressbar(data);
+                createprogressbar2(data);
             })
             .catch(function(err){
                 console.log('error:' + err);
@@ -138,8 +126,49 @@
                     }else{
                         counter +=1;
                         number.innerHTML = counter;
-                }}, 1);
-            }  
+                }}, 18);
+            }
+            function createprogressbar2(data){
+                let number = document.getElementById("number2");
+                let counter = 0;
+                setInterval(() => {
+                    if(counter == parseInt(data[0].tov)){
+                        clearInterval();
+                    }else{
+                        counter +=1;
+                        number2.innerHTML = counter;
+                }}, 18);
+            }
         </script>
+        <table style="width: 600px">
+            <tr>
+                <td></td>
+                <td rowspan = "9"><img src="C:\Users\e1176752\Pictures\DTX\DTXCARRIER1.PNG" width = 300px></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Module 1 Status: Replace DT2150M</td>
+            </tr>
+            <tr>
+                <td>Module 2 Status: OK</td>
+            </tr>
+            <tr>
+                <td>Module 3 Status: OK</td>
+            </tr>
+            <tr>
+                <td>Module 4 Status: OK</td>
+            </tr>
+            <tr>
+                <td>Module 5 Status: OK</td>
+            </tr>
+            <tr>
+                <td>Module 6 Status: OK</td>
+            </tr>
+            <tr>
+                <td>Module 7 Status: OK</td>
+            </tr>
+        </table>    
     </body>
 </html>

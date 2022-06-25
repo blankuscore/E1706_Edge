@@ -4,12 +4,40 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-body{
-    background: #e3edf7;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.w-layout-grid {
+    display: -ms-grid;
+    display: grid;
+    grid-auto-columns: 1fr;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto;
+    grid-template-rows: auto auto;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+}
+.w-row{
+    content: " ";
+    display: table;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 3;
+    grid-row-end: 3;
+}
+.w-col {
+    position: relative;
+    display: inline-block;
+    min-height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.w-col-2 {
+    width: 30%;
+}
+.w-col-3 {
+    width: 35%;
+}
+.w-col-5{
+    width: 35%;
 }
 .skill{
     width: 160px;
@@ -54,8 +82,31 @@ circle{
         stroke-dashoffset: 165;
     }
 }
+.myDiv{
+    background-color: gray;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+}
 svg{
     position: absolute;
     top: 0;
     left: 0;
+}
+.body {
+    height: auto;
+    border-radius: 2px;
+    -o-object-fit: fill;
+    object-fit: fill;
+}
+.heading {
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    font-size: 32px;
+}
+.div-block {
+    padding-bottom: 5px;
+    background-color: #232429;
+    margin-bottom: 5px;
 }
