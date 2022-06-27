@@ -79,7 +79,7 @@ circle{
 }
 @keyframes anim{
     100%{
-        stroke-dashoffset: 165;
+        stroke-dashoffset: 100;
     }
 }
 .myDiv{
