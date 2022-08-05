@@ -1,5 +1,4 @@
-[
-    {
+{
         "surge"             :   "60",
         "tov"               :   "90",
         "module_status_1"   :  "1",
@@ -32,5 +31,4 @@
         "module_status_28"  :  "0",
         "carrier"           :  "1",
         "power_system"      :  "1"
-    }
-]
+}
