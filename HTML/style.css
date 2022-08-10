@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.w-layout-grid {
+    display: -ms-grid;
+    display: grid;
+    grid-auto-columns: 1fr;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto;
+    grid-template-rows: auto auto;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+}
+.w-row{
+    content: " ";
+    display: table;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 3;
+    grid-row-end: 3;
+}
+.w-col {
+    position: relative;
+    display: inline-block;
+    min-height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.w-col-2 {
+    width: 33%;
+}
+.w-col-3 {
+    width: 33%;
+}
+.w-col-5{
+    width: 33%;
+}
+.skill{
+    width: 160px;
+    height: 160px;
+    position: relative;
+}
+.outer{
+    height:160px;
+    width:160px;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 10px -1px rgba(255,255,255,0.7)
+}
+.inner{
+    height:120px;
+    width:120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+                inset -4px 4px 6px -1px rgba(255,255,255,0.7),
+                -0.5px -0.5px 0px rgba(255,255,255,1),
+                0.5px 0.5px 0px rgba(0,0,0,0.15),
+                0px 12px 10px -10px rgba(0,0,0,0.05);
+}
+#number{
+    font-weight: 600;
+    color: #555;
+}
+circle{
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: anim 2s linear forwards;
+}
+@keyframes anim{
+    100%{
+        stroke-dashoffset: 100;
+    }
+}
+.myDiv{
+    background-color: gray;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+}
+svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.body {
+    height: auto;
+    border-radius: 2px;
+    -o-object-fit: fill;
+    object-fit: fill;
+}
+.heading {
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    font-size: 32px;
+}
+.div-block {
+    padding-bottom: 5px;
+    background-color: #232429;
+    margin-bottom: 5px;
+}
+.topbody{
+    display: grid;
+    height: 100px;
+    align-content: space-evenly;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    padding: 10px;
+}
+.warning{
+    background-color: yellow;
+    height: 20px;
+    align-content: center;
+    font-size: 0.75em;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    padding: 3px 0;
+}
