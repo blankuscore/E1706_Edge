@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: C:\Users\e1176752\Documents\Altium\Projects\E1706_Demo\E1706D_Demo_2.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=e1706d_demo_2.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Rect_Holes|DrillFile=e1706d_demo_2-rectholes.txt|DrillLayers=gtl,gbl
