@@ -71,7 +71,7 @@ function module_check(data){ // function to check modules and apply proper DTX i
     }
   }
   DTX_text = DTX_text.concat(".png");
-  var img_path = "C:/Users/e1176752/Documents/VSCode/Projects/E1706_Edge/E1706_Edge/HTML/Images/";
+  var img_path = "./Images/";
   img_path = img_path.concat(DTX_text);
 
   var mainContainer = document.getElementById("demo");
@@ -107,13 +107,13 @@ function line_check(data){ // function to check the incoming line presence (also
 
     var img = document.createElement("img");
     img.width = x*0.25;
-    img.src = "C:/Users/e1176752/Documents/VSCode/Projects/E1706_Edge/E1706_Edge/HTML/Images/Surge-TOV Plot.png"
+    img.src = "./Images/Surge-TOV Plot.png"
     cell.appendChild(img);
     
     var cell = row.insertCell(1);
     var img = document.createElement("img");
     img.width = x*0.25;
-    img.src = "C:/Users/e1176752/Documents/VSCode/Projects/E1706_Edge/E1706_Edge/HTML/Images/threephase.gif"
+    img.src = "./Images/threephase.gif"
     cell.appendChild(img);
   }
 }
