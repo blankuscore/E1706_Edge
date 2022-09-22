@@ -1,3 +1,12 @@
+// **10.14 completion date**
+// mobile vs tablet vs laptop
+// add boilerplate
+// update threephase.gif (shorter moving x axis)
+// test on mobile device
+// add buy me now! link
+// test web page on raspberry pi
+// test rs485 on raspberry pi
+
 function hidewarningbanner(data) { // function to determine if banner is necessary
   var carrier_qty = data.general.carrier;
   // Check the power system and carrier quantity
