@@ -1,4 +1,6 @@
-#include Arduino
+#include <Arduino.h>
+
+#define MASTER_EN 8
 
 int surge_count;
 int tov_count;
@@ -19,10 +21,10 @@ void setup(){
     
     surge_count = 0; tov_count = 0;
 
-    PCMSK2 |= bit (PCINT18);  // PCINTxx where D2 -> PCINT18
-    PCMSK2 |= bit (PCINT19)   // PCINTxx where D3 -> PCINT19
-    PCIFR  |= bit (PCIF2);    // clear any outstanding interrupts
-    PCICR  |= bit (PCIE2);    // enable pin change interrupts for D0 to D7
+    PCMSK2 |= bit(PCINT18);  // PCINTxx where D2 -> PCINT18
+    PCMSK2 |= bit(PCINT19);  // PCINTxx where D3 -> PCINT19
+    PCIFR  |= bit(PCIF2);    // clear any outstanding interrupts
+    PCICR  |= bit(PCIE2);    // enable pin change interrupts for D0 to D7
     pinMode (2, INPUT_PULLUP);// set pin 2 as surge interrupt input 
     pinMode (3, INPUT_PULLUP);// set pin 3 as tov interrupt input
 
@@ -33,7 +35,7 @@ void setup(){
     Serial.begin(9600);
 }
 
-void loop(){
+void loop() {
     digitalWrite(MASTER_EN, HIGH);
 
     Serial.println("S");
@@ -46,4 +48,20 @@ void loop(){
     Serial.println(1);
 
     Serial.println("M");
+    for(int i = 4; i < 11; i++){
+        if(digitalRead(i) == true){
+            Serial.print(0);
+        } else {
+            Serial.print(1);
+        }
+    }
+
+    Serial.println("L");
+    for(int i = 11; i < 14; i++){
+        if(digitalRead(i) == false){
+            Serial.print(0);
+        } else {
+            Serial.print(1);
+        }
+    }
 }
