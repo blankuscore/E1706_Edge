@@ -131,7 +131,7 @@ function addCounts(data){ // function to add raw data from surge & tov count
 //https://raw.githubusercontent.com/blankuscore/E1706_Edge/main/HTML/data.json
 
 fetch('https://raw.githubusercontent.com/blankuscore/E1706_Edge/main/HTML/data.json')
-  .then(function(response){
+.then(function(response){
       return response.json();
   })
   .then(data => {
